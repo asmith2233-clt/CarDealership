@@ -112,6 +112,10 @@ public class Vehicle {
         vehicles.add(new Vehicle(18321, 2019, "Toyota", "RAV4", "SUV", "Gray", 46320, 21995.00));
         return vehicles;
     }
+    @Override
+    public String toString() {
+        return year + " " + make + " " + model + " (" + color + ") - $" + price;
+    }
 
 
 }
