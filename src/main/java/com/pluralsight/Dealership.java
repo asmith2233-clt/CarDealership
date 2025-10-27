@@ -3,54 +3,99 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Dealership {
-    // Dealership info
     private String name;
     private String address;
     private String phone;
+    private ArrayList<Vehicle> vehicles;
 
-    // A list that holds all vehicles
-    private ArrayList<Vehicle> inventory;
-
-    // Constructor
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = new ArrayList<>(); // Always start with an empty list
+        this.vehicles = new ArrayList<>();
     }
 
-    // Add a vehicle to the list
+    public String getName() { return name; }
+    public String getAddress() { return address; }
+    public String getPhone() { return phone; }
+
     public void addVehicle(Vehicle vehicle) {
-        inventory.add(vehicle);
+        vehicles.add(vehicle);
     }
 
-    // Get all vehicles
+    public void removeVehicle(int vinNumber) {
+        vehicles.removeIf(v -> v.getVinNumber() == vinNumber);
+    }
+
     public ArrayList<Vehicle> getAllVehicles() {
-        return inventory;
+        return vehicles;
     }
 
-    // Getters and setters
-    public String getName() {
-        return name;
+    // ✅ Search by price range
+    public ArrayList<Vehicle> getVehiclesByPrice(double minPrice, double maxPrice) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles) {
+            if (v.getPrice() >= minPrice && v.getPrice() <= maxPrice) {
+                matches.add(v);
+            }
+        }
+        return matches;
     }
 
-    public String getAddress() {
-        return address;
+    // ✅ Search by make or model
+    public ArrayList<Vehicle> getVehiclesByMakeModel(String makeOrModel) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles) {
+            if (v.getMake().equalsIgnoreCase(makeOrModel) ||
+                    v.getModel().equalsIgnoreCase(makeOrModel)) {
+                matches.add(v);
+            }
+        }
+        return matches;
     }
 
-    public String getPhone() {
-        return phone;
+    // ✅ Search by year range
+    public ArrayList<Vehicle> getVehiclesByYear(int minYear, int maxYear) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles) {
+            if (v.getYear() >= minYear && v.getYear() <= maxYear) {
+                matches.add(v);
+            }
+        }
+        return matches;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    // ✅ Search by color
+    public ArrayList<Vehicle> getVehiclesByColor(String color) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles) {
+            if (v.getColor().equalsIgnoreCase(color)) {
+                matches.add(v);
+            }
+        }
+        return matches;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    // ✅ Search by mileage
+    public ArrayList<Vehicle> getVehiclesByMileage(int minMiles, int maxMiles) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles) {
+            if (v.getOdometer() >= minMiles && v.getOdometer() <= maxMiles) {
+                matches.add(v);
+            }
+        }
+        return matches;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    // ✅ Search by type
+    public ArrayList<Vehicle> getVehiclesByType(String type) {
+        ArrayList<Vehicle> matches = new ArrayList<>();
+        for (Vehicle v : vehicles) {
+            if (v.getVehicleType().equalsIgnoreCase(type)) {
+                matches.add(v);
+            }
+        }
+        return matches;
     }
 }
+
