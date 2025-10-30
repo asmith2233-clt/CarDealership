@@ -31,7 +31,7 @@ public class Dealership {
         return vehicles;
     }
 
-    // ✅ Search by price range
+    // Search by price range
     public ArrayList<Vehicle> getVehiclesByPrice(double minPrice, double maxPrice) {
         ArrayList<Vehicle> matches = new ArrayList<>();
         for (Vehicle v : vehicles) {
@@ -42,7 +42,7 @@ public class Dealership {
         return matches;
     }
 
-    // ✅ Search by make or model
+    //  Search by make or model
     public ArrayList<Vehicle> getVehiclesByMakeModel(String makeOrModel) {
         ArrayList<Vehicle> matches = new ArrayList<>();
         for (Vehicle v : vehicles) {
@@ -54,7 +54,7 @@ public class Dealership {
         return matches;
     }
 
-    // ✅ Search by year range
+    //  Search by year range
     public ArrayList<Vehicle> getVehiclesByYear(int minYear, int maxYear) {
         ArrayList<Vehicle> matches = new ArrayList<>();
         for (Vehicle v : vehicles) {
@@ -65,7 +65,7 @@ public class Dealership {
         return matches;
     }
 
-    // ✅ Search by color
+    //  Search by color
     public ArrayList<Vehicle> getVehiclesByColor(String color) {
         ArrayList<Vehicle> matches = new ArrayList<>();
         for (Vehicle v : vehicles) {
@@ -76,7 +76,7 @@ public class Dealership {
         return matches;
     }
 
-    // ✅ Search by mileage
+    //  Search by mileage
     public ArrayList<Vehicle> getVehiclesByMileage(int minMiles, int maxMiles) {
         ArrayList<Vehicle> matches = new ArrayList<>();
         for (Vehicle v : vehicles) {
@@ -87,7 +87,7 @@ public class Dealership {
         return matches;
     }
 
-    // ✅ Search by type
+    //  Search by type
     public ArrayList<Vehicle> getVehiclesByType(String type) {
         ArrayList<Vehicle> matches = new ArrayList<>();
         for (Vehicle v : vehicles) {
